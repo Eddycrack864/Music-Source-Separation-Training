@@ -26,6 +26,9 @@ def get_model_from_config(model_type, config_path):
     elif model_type == 'segm_models':
         from models.segm_models import Segm_Models_Net
         model = Segm_Models_Net(config)
+    elif model_type == 'torchseg':
+        from models.torchseg_models import Torchseg_Net
+        model = Torchseg_Net(config)
     elif model_type == 'mel_band_roformer':
         from models.bs_roformer import MelBandRoformer
         model = MelBandRoformer(
@@ -42,6 +45,11 @@ def get_model_from_config(model_type, config_path):
     elif model_type == 'bandit':
         from models.bandit.core.model import MultiMaskMultiSourceBandSplitRNNSimple
         model = MultiMaskMultiSourceBandSplitRNNSimple(
+            **config.model
+        )
+    elif model_type == 'scnet_unofficial':
+        from models.scnet_unofficial import SCNet
+        model = SCNet(
             **config.model
         )
     elif model_type == 'scnet':
