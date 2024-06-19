@@ -1,4 +1,5 @@
 import os
+os.chdir("/content")
 download_dir = "models"
 downloads = [
   ("https://huggingface.co/Eddycrack864/Music-Source-Separation-Training/resolve/main/model_bs_roformer_ep_317_sdr_12.9755.ckpt", f"{download_dir}/model_bs_roformer_ep_317_sdr_12.9755.ckpt"),
